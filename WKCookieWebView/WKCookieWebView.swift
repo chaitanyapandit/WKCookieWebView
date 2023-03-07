@@ -176,6 +176,7 @@ extension WKCookieWebView: WKNavigationDelegate {
         decisionHandler(.allow)
     }
     
+    @available(macOS 10.15, *)
     @available(iOS 13.0, *)
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
         guard (wkNavigationDelegate?.webView?(webView, decidePolicyFor: navigationAction, preferences: preferences, decisionHandler: decisionHandler)) == nil else {
