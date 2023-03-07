@@ -6,7 +6,6 @@
 //  Copyright © 2017년 Kofktu. All rights reserved.
 //
 
-import UIKit
 import Foundation
 import WebKit
 

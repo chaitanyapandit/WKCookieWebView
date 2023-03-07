@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 import WebKit
 
 final class WKCookieWebViewPreloader: NSObject, WKNavigationDelegate {
@@ -40,6 +39,7 @@ public extension WKCookieWebView {
     @objc
     class func preloadWithDomainForCookieSync(urlString: String,
                                                      completion: (() -> Void)? = nil) {
+#if os(iOS)
         guard let url = URL(string: urlString),
             let window = UIApplication.shared.keyWindow else {
                 completion?()
@@ -55,6 +55,9 @@ public extension WKCookieWebView {
         })
         webView.load(URLRequest(url: url))
         window.addSubview(webView)
+#elseif os(macOS)
+        completion?()
+#endif
     }
     
 }
