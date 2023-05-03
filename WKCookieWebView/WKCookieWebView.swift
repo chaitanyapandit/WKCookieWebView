@@ -256,12 +256,12 @@ extension WKCookieWebView: WKNavigationDelegate {
         wkNavigationDelegate?.webViewWebContentProcessDidTerminate?(webView)
     }
     
-    @available(iOS 14.5, *)
+    @available(macOS 11.3, iOS 14.5, *)
     public func webView(_ webView: WKWebView, navigationResponse: WKNavigationResponse, didBecome download: WKDownload) {
         wkNavigationDelegate?.webView?(webView, navigationResponse: navigationResponse, didBecome: download)
     }
     
-    @available(iOS 14.5, *)
+    @available(macOS 11.3, iOS 14.5, *)
     public func webView(_ webView: WKWebView, navigationAction: WKNavigationAction, didBecome download: WKDownload) {
         wkNavigationDelegate?.webView?(webView, navigationAction: navigationAction, didBecome: download)
     }
